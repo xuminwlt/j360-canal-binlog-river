@@ -11,12 +11,223 @@
 
     <artifactId>j360-binlog-canal-client</artifactId>
 
+    <properties>
+        <spring.data.redis.version>1.4.2.RELEASE</spring.data.redis.version>
+        <spring.version>4.1.6.RELEASE</spring.version>
+        <project.encoding>UTF-8</project.encoding>
+        <lombok.version>1.14.8</lombok.version>
+        <logback.version>1.1.2</logback.version>
+        <slf4j.version>1.7.10</slf4j.version>
+        <zookeeper.version>3.4.6</zookeeper.version>
+        <zkclinet.version>0.4</zkclinet.version>
+        <jedis.version>2.6.2</jedis.version>
+        <guava.version>20.0</guava.version>
+        <jackson.version>1.9.13</jackson.version>
+        <servlet.version>2.5</servlet.version>
+        <servlet-api.version>3.0.1</servlet-api.version>
+        <fastjson.version>1.2.16</fastjson.version>
+        <dom4j.version>1.6.1</dom4j.version>
+        <jaxb2.version>0.9.3</jaxb2.version>
+        <mybatis.version>3.2.8</mybatis.version>
+        <mysql.version>5.1.35</mysql.version>
+        <mybatis.spring.version>1.2.2</mybatis.spring.version>
+        <druid.version>1.0.12</druid.version>
+        <aspectj.version>1.8.1</aspectj.version>
+        <httpclient.version>4.5.2</httpclient.version>
+        <mail.version>1.4.7</mail.version>
+        <dozer.version>5.5.1</dozer.version>
+        <weibo4j.version>3.0</weibo4j.version>
+        <commons-fileupload.version>1.3.1</commons-fileupload.version>
+        <log4j.version>1.2.17</log4j.version>
+        <emma.version>2.1.5320</emma.version>
+        <twilio.version>3.4.5</twilio.version>
+        <assertj.version>1.7.0</assertj.version>
+        <hamcrest.core.version>1.3</hamcrest.core.version>
+        <mockito.core.version>1.9.5</mockito.core.version>
+        <jsonpath.version>0.9.0</jsonpath.version>
+        <jackson2.version>2.6.2</jackson2.version>
+        <joda-time.version>2.3</joda-time.version>
+        <springfox.version>2.5.0</springfox.version>
+        <shiro.version>1.2.3</shiro.version>
+        <commons-lang3.version>3.5</commons-lang3.version>
+        <slf4j.version>1.7.22</slf4j.version>
+        <orika.version>1.5.0</orika.version>
+        <jackson.version>2.8.6</jackson.version>
+        <cglib.version>3.2.4</cglib.version>
+        <commons-collections.version>4.1</commons-collections.version>
+        <brave.version>4.2.0</brave.version>
+    </properties>
+
     <dependencies>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-access</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-client</artifactId>
+            <version>5.6.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>0.10.2.0</version>
+        </dependency>
         <dependency>
             <groupId>com.alibaba.otter</groupId>
             <artifactId>canal.client</artifactId>
-            <version>1.0.12</version>
+            <version>1.0.24</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba.otter</groupId>
+            <artifactId>canal.common</artifactId>
+            <version>1.0.24</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-lang</groupId>
+                    <artifactId>commons-lang</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.5</version>
+        </dependency>
+
+        <!-- jackson -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>${jackson2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>${jackson2.version}</version>
+        </dependency>
+
     </dependencies>
 
 
