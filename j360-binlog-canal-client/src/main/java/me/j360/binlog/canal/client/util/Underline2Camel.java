@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Package: cn.paomiantv.common.util
+ * Package: me.j360.binlog.common.util
  * User: min_xu
  * Date: 2017/10/13 下午6:32
  * 说明：

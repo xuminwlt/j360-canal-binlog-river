@@ -1,0 +1,12 @@
+dataSourceKey: defaultDS1
+destination: example
+esMapping:
+  _index: mytest_user1
+  _type: user
+  _id: _id
+#  pk: id
+  sql: "select a.uid as _id, a.userName as username, a.enpassword as password, a.createTime  from admin a "
+#  objFields:
+#    _labels: array:;
+  etlCondition: "where a.createTime>='{0}'"
+  commitBatch: 1
