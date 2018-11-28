@@ -183,6 +183,7 @@ srcDataSources配置多份,用于解析不同的数据库的meta信息,和落地
 canalAdapters 配置一个或多个instance的导出配置
 outerAdapters 配置导出落地的存储的多套方案
 
-
+>
+      这里的es使用的transportClient,默认9200端口, httpclient9300端口
 
 

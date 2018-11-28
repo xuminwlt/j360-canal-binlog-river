@@ -26,13 +26,13 @@ canal.conf:
   mode: rocketMQ # kafka rocketMQ
   srcDataSources:
     defaultDS:
-      url: jdbc:mysql://10.200.200.8:3306/mocation?useUnicode=true
-      username: fotoplace
-      password: ccab*)12&&62sz
+      url: jdbc:mysql://10.200.200.8:3306/xxx?useUnicode=true
+      username: xxx
+      password: xxx
     defaultDS1:
-      url: jdbc:mysql://10.200.200.8:3306/fotoplacedb2?useUnicode=true
-      username: fotoplace
-      password: ccab*)12&&62sz
+      url: jdbc:mysql://10.200.200.8:3306/xxxx?useUnicode=true
+      username: xxx
+      password: xxx
   canalAdapters:
   - instance: example # canal instance Name or mq topic name
     groups:
